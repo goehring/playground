@@ -32,8 +32,4 @@ def mandelbrot():
     #img.save('mandelbrot.png')
     img.show()
 
-    pass
-
-
-
 mandelbrot()
