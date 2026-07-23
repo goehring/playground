@@ -9,8 +9,8 @@ def mandelbrot():
 
     w, h = 1024, 512  #determines the resolution of the output image
 
-    maxiter = 100     #number of max iterations, higher values lead to more precise and detailed results
-    threshold = 50    #to determine if the series does not converge, higher values lead to more nuanced contours
+    maxiter = 100    #number of max iterations, higher values lead to more precise and detailed results
+    threshold = 2    #to determine if the series does not converge, everything above to reaches infinity
 
     data = np.zeros((h, w, 3), dtype=np.uint8)
     ##data[0:256, 0:256] = [255, 0, 0]  # red patch in upper left
