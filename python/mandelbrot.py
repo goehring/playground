@@ -2,6 +2,7 @@
 #no ai used
 import numpy as np
 from PIL import Image
+#import matplotlib.pyplot as plt
 
 def mandelbrot():
     #print("Hallo")
@@ -22,14 +23,16 @@ def mandelbrot():
             #print(c)
             for it in range(maxiter):
                 z = z*z + c
-                if z.__abs__() > threshold:  
+                if z.__abs__() > threshold:
                     data[y,x] = [it * 255/maxiter,0,0]
-                    #the most iterations lead to the brightest colors, large numbers darker that don't converge, exceed the bound quicker and are painted darker.
+                    #the most iterations which only exceed the threshold in the end lead to the brightest colors, large numbers darker that don't converge, exceed the bound quicker and are painted darker.
                     #print(it)
                     break
 
     img = Image.fromarray(data, 'RGB')
-    #img.save('mandelbrot.png')
+    img.save('mandelbrot.png')
     img.show()
+
+    #plt.imshow(img)
 
 mandelbrot()
